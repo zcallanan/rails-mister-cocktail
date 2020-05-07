@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'open-uri'
+require 'json'
+
+# Construct the URL we'll be calling
+url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+
+# Actually fetch the contents of the remote URL as a String.
+list = open(url).read
+
+list.each do |row|
+
+end
