@@ -1,22 +1,33 @@
 <div class="cocktail-banner" style="background-image: url(<%= asset_path @cocktail.picture_url %>) ;">
   <div class="container">
-    <div class="row justify-content-start">
-      <div class="col-4">
+
+    <div class="row justify-content-start mt-n5">
+      <div class="col-2">
       </div>
-      <div class="col-8">
-        <div class="show-card-product d-flex align-items-center">
-            <div class="row align-items-center justify-content-between">
-              <div class="col-8 ml-3">
-                <h2><%= @cocktail.name %></h2>
-                <p><%= @cocktail.description %>.</p>
-              </div>
-              <div class="col-3 d-flex text-nowrap justify-content-end mr-3">
-                <%= link_to "Edit Cocktail", edit_cocktail_path, class: "btn btn-secondary" %>
-              </div>
-            </div>
+      <div class="col-10">
+        <div class="row show-card-product align-items-center">
+          <div class="col-8">
+            <h2><%= @cocktail.name %></h2>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="row justify-content-start">
+      <div class="col-3">
+      </div>
+      <div class="col-9">
+        <div class="row show-card-product align-items-center justify-content-between">
+          <div class="col-8 ml-3">
+            <p><%= @cocktail.description %>.</p>
+          </div>
+          <div class="col-3 d-flex text-nowrap justify-content-end mr-3">
+            <%= link_to "Edit Cocktail", edit_cocktail_path, class: "btn btn-secondary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="row justify-content-start">
       <div class="col-4">
       </div>
