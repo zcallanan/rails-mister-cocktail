@@ -9,12 +9,16 @@
 require 'open-uri'
 require 'json'
 
-# Construct the URL we'll be calling
-url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+# Ingredient.destroy_all
 
-# Actually fetch the contents of the remote URL as a String.
+# url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+# list = open(url).read
+# result = JSON.parse(list)
+# result["drinks"].each do |row|
+#   ingredient = Ingredient.new(name: row["strIngredient1"])
+#   ingredient.save
+# end
+
+url = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic'
 list = open(url).read
-
-list.each do |row|
-
-end
+result = JSON.parse(list)

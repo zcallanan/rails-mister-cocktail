@@ -10,5 +10,4 @@ class Ingredient < ApplicationRecord
   def check_for_doses
     raise ActiveRecord::InvalidForeignKey if doses.any?
   end
-
 end
