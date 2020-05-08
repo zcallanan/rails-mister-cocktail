@@ -1,0 +1,10 @@
+<div class="col-4">
+  <%= link_to cocktail_path(card.id), class: "cocktail_card_link" do %>
+    <div class="card-product rounded">
+      <%= image_tag card.picture_url, alt: "Alcohol" %>
+        <div class="card-product-infos">
+          <h2><%= card.name %></h2>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,12 +1,8 @@
 <div class="banner banner-dark">
   <div class="container">
-    <div class="row">
+    <div class="row ">
       <% @cocktails.each do |cocktail| %>
-          <% if cocktail.id.even? %>
-            <%= render :partial => "left_card", :object => cocktail %>
-          <% else %>
-            <%= render :partial => "right_card", :object => cocktail %>
-          <% end %>
+        <%= render :partial => "card", :object => cocktail %>
       <% end %>
     </div>
   </div>

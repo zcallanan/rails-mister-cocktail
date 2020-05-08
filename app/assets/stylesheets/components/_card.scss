@@ -1,15 +1,17 @@
 .card-product {
-  overflow: visible;
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin: 16px;
 }
 
 .card-product img {
-  height: 200px;
-  width: 40%;
+  height: 100%;
+  width: 120px;
   object-fit: cover;
-  background-position: center;
-  border-radius: 0 12px 12px 0;
 }
 
 .card-product h2 {
@@ -31,8 +33,15 @@
 }
 
 .card-product-infos {
-  height: 240px;
-  background: white;
-  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: rgb(220,220,220);
+  flex-grow: 1;
+  height: 100%;
+}
 
+.cocktail_card_link {
+  text-decoration: none;
 }
