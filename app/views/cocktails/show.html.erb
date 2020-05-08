@@ -20,27 +20,27 @@
     <div class="row justify-content-start">
       <div class="col-4">
       </div>
-      <div class="col-6">
+      <div class="col-8">
         <div class="ingredient-card-product">
           <div class="row align-items-center justify-content-center">
-            <h2 class="mt-4">Ingredients</h2>
+            <h2 class="mt-4"><strong>Ingredients</strong></h2>
           </div>
-          <div class="row justify-content-left align-items-center">
-            <div class="col-7">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-8">
               <ul>
               <% @cocktail.doses.each do |dose| %>
                 <% @cocktail.ingredients.each do |ingredient| %>
                   <% if dose.ingredient_id == ingredient.id %>
-                    <li class="ml-5"> <%= ingredient.name %> - <%= dose.description %></li>
+                    <li class="ml-5"> <%= ingredient.name %> - <%= dose.description %>
+                      <%= link_to "(delete)", dose_path(dose), method: :delete, data: {
+          confirm: 'Are you sure?'}  %></li>
                   <% end %>
                 <% end %>
               <% end %>
             </ul>
             </div>
-            <div class="col-4 mr-4">
-              <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-dark mb-3 w-100" %>
-              <%= link_to "Remove a dose", dose_path(@cocktail), method: :delete, class: "btn btn-warning w-100", data: {
-          confirm: 'Are you sure?' }  %>
+            <div class="col-3 mr-3 d-flex justify-content-end">
+              <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-dark mb-3 w-100" %>
             </div>
           </div>
         </div>
