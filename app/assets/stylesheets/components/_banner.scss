@@ -4,23 +4,11 @@
   height: 100vh;
   color: #eee;
   text-align: center;
-}
-
-.banner-light {
   background-image:
     linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
     url("https://images.unsplash.com/photo-1543007630-9710e4a00a20");
-    background-attachment: scroll;
+    background-attachment: fixed;
     padding-top: 40vh;
-}
-
-.banner-dark {
-  transition: 0.8s background-color ease;
-  background-image:
-    linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8),rgba(0,0,0,0.9)),
-    url("https://images.unsplash.com/photo-1543007630-9710e4a00a20");
-    background-attachment: scroll;
-    padding-top: 15vh;
 }
 
 .banner h1 {
