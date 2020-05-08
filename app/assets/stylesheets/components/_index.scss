@@ -5,3 +5,17 @@
 @import "card";
 @import "navbar";
 
+.quote {
+  font-size: 20px;
+  color: white;
+  opacity: .9;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.title {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-align: center;
+  text-decoration: underline;
+}

@@ -1,5 +1,7 @@
 <div class="">
   <div class="container">
+    <h2 class="title"><strong>Cocktails</strong></h2>
+    <p class="quote"><em>“Alcohol may be man's worst enemy, but the bible says love your enemy." - Frank Sinatra</em></p>
     <div class="row ">
       <% @cocktails.each do |cocktail| %>
         <%= render :partial => "card", :object => cocktail %>
