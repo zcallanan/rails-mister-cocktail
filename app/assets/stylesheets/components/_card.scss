@@ -12,6 +12,7 @@
   height: 100%;
   width: 120px;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .card-product h2 {

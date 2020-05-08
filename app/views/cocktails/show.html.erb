@@ -1,0 +1,53 @@
+<div class="cocktail-banner" style="background-image: url(<%= asset_path @cocktail.picture_url %>) ;">
+  <div class="container">
+    <div class="row justify-content-start">
+      <div class="col-4">
+      </div>
+      <div class="col-8">
+        <div class="show-card-product d-flex align-items-center">
+            <div class="row align-items-center justify-content-between">
+              <div class="col-8 ml-3">
+                <h2><%= @cocktail.name %></h2>
+                <p><%= @cocktail.description %>.</p>
+              </div>
+              <div class="col-3 d-flex text-nowrap justify-content-end mr-3">
+                <%= link_to "Edit Cocktail", edit_cocktail_path, class: "btn btn-secondary" %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-start">
+      <div class="col-4">
+      </div>
+      <div class="col-6">
+        <div class="ingredient-card-product">
+          <div class="row align-items-center justify-content-center">
+            <h2 class="mt-4">Ingredients</h2>
+          </div>
+          <div class="row justify-content-left align-items-center">
+            <div class="col-7">
+              <ul>
+              <% @cocktail.doses.each do |dose| %>
+                <% @cocktail.ingredients.each do |ingredient| %>
+                  <% if dose.ingredient_id == ingredient.id %>
+                    <li class="ml-5"> <%= ingredient.name %> - <%= dose.description %></li>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </ul>
+            </div>
+            <div class="col-4 mr-4">
+              <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-dark mb-3 w-100" %>
+              <%= link_to "Remove a dose", dose_path(@cocktail), method: :delete, class: "btn btn-warning w-100", data: {
+          confirm: 'Are you sure?' }  %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

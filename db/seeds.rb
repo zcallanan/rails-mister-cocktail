@@ -44,49 +44,49 @@ drink_ids.each do |id|
   ingredient_hash = {}
   ingredients.each do |ingredient|
     if ingredient['name'] == drink_details['drinks'][0]['strIngredient1']
-      ingredient_hash[ingredient['id']] = [ingredient['name'], cocktail['strMeasure1']]
+      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure1']
     end
     if ingredient['name'] == drink_details['drinks'][0]['strIngredient2']
-      ingredient_hash[ingredient['id']] = [ingredient['name'], cocktail['strMeasure2']]
+      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure2']
     end
     if ingredient['name'] == drink_details['drinks'][0]['strIngredient3']
-      ingredient_hash[ingredient['id']] = [ingredient['name'], cocktail['strMeasure3']]
+      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure3']
     end
     if ingredient['name'] == drink_details['drinks'][0]['strIngredient4']
-      ingredient_hash[ingredient['id']] = [ingredient['name'], cocktail['strMeasure4']]
+      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure4']
     end
     if ingredient['name'] == drink_details['drinks'][0]['strIngredient5']
-      ingredient_hash[ingredient['id']] = [ingredient['name'], cocktail['strMeasure5']]
+      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure5']
     end
     if ingredient['name'] == drink_details['drinks'][0]['strIngredient6']
-      ingredient_hash[ingredient['id']] = [ingredient['name'], cocktail['strMeasure6']]
+      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure6']
     end
     if ingredient['name'] == drink_details['drinks'][0]['strIngredient7']
-      ingredient_hash[ingredient['id']] = [ingredient['name'], cocktail['strMeasure7']]
+      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure7']
     end
     if ingredient['name'] == drink_details['drinks'][0]['strIngredient8']
-      ingredient_hash[ingredient['id']] = [ingredient['name'], cocktail['strMeasure8']]
+      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure8']
     end
     if ingredient['name'] == drink_details['drinks'][0]['strIngredient9']
-      ingredient_hash[ingredient['id']] = [ingredient['name'], cocktail['strMeasure9']]
+      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure9']
     end
     if ingredient['name'] == drink_details['drinks'][0]['strIngredient10']
-      ingredient_hash[ingredient['id']] = [ingredient['name'], cocktail['strMeasure10']]
+      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure10']
     end
     if ingredient['name'] == drink_details['drinks'][0]['strIngredient11']
-      ingredient_hash[ingredient['id']] = [ingredient['name'], cocktail['strMeasure11']]
+      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure11']
     end
     if ingredient['name'] == drink_details['drinks'][0]['strIngredient12']
-      ingredient_hash[ingredient['id']] = [ingredient['name'], cocktail['strMeasure12']]
+      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure12']
     end
     if ingredient['name'] == drink_details['drinks'][0]['strIngredient13']
-      ingredient_hash[ingredient['id']] = [ingredient['name'], cocktail['strMeasure13']]
+      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure13']
     end
     if ingredient['name'] == drink_details['drinks'][0]['strIngredient14']
-      ingredient_hash[ingredient['id']] = [ingredient['name'], cocktail['strMeasure14']]
+      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure14']
     end
     if ingredient['name'] == drink_details['drinks'][0]['strIngredient15']
-      ingredient_hash[ingredient['id']] = [ingredient['name'], cocktail['strMeasure15']]
+      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure15']
     end
   end
 
@@ -94,7 +94,7 @@ drink_ids.each do |id|
     dose = Dose.new(
       cocktail_id: cocktail.id,
       ingredient_id: key,
-      description: "#{value[0]} - #{value[1]}"
+      description: value
     )
     dose.save
   end
