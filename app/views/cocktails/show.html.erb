@@ -2,12 +2,12 @@
   <div class="container">
 
     <div class="row justify-content-start mt-n5">
-      <div class="col-2">
+      <div class="col-3">
       </div>
-      <div class="col-10">
-        <div class="row show-card-product align-items-center">
+      <div class="col-7">
+        <div class="row show-title-card align-items-center ">
           <div class="col-8">
-            <h2><%= @cocktail.name %></h2>
+            <h2 class="mb-0 text-center"><strong><%= @cocktail.name %></strong></h2>
           </div>
         </div>
       </div>
@@ -16,10 +16,10 @@
     <div class="row justify-content-start">
       <div class="col-3">
       </div>
-      <div class="col-9">
+      <div class="col-7">
         <div class="row show-card-product align-items-center justify-content-between">
           <div class="col-8 ml-3">
-            <p><%= @cocktail.description %>.</p>
+            <p class="mt-4 mb-4"><%= @cocktail.description %>.</p>
           </div>
           <div class="col-3 d-flex text-nowrap justify-content-end mr-3">
             <%= link_to "Edit Cocktail", edit_cocktail_path, class: "btn btn-secondary" %>
@@ -29,12 +29,12 @@
     </div>
 
     <div class="row justify-content-start">
-      <div class="col-4">
+      <div class="col-3">
       </div>
-      <div class="col-8">
+      <div class="col-7">
         <div class="ingredient-card-product">
           <div class="row align-items-center justify-content-center">
-            <h2 class="mt-4"><strong>Ingredients</strong></h2>
+            <h2 class="mt-4"><strong>Doses</strong></h2>
           </div>
           <div class="row justify-content-between align-items-center">
             <div class="col-8">
@@ -42,16 +42,20 @@
               <% @cocktail.doses.each do |dose| %>
                 <% @cocktail.ingredients.each do |ingredient| %>
                   <% if dose.ingredient_id == ingredient.id %>
-                    <li class="ml-5"> <%= ingredient.name %> - <%= dose.description %>
-                      <%= link_to "(delete)", dose_path(dose), method: :delete, data: {
-          confirm: 'Are you sure?'}  %></li>
+                    <li class="ml-5">
+                      <%= ingredient.name %> • <%= dose.description %> •
+                      <%= link_to dose_path(dose), method: :delete, data: {
+          confirm: 'Are you sure?'} do %>
+                        <i class="far fa-trash-alt text-info"></i>
+                      <% end %>
+                    </li>
                   <% end %>
                 <% end %>
               <% end %>
             </ul>
             </div>
-            <div class="col-3 mr-3 d-flex justify-content-end">
-              <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-dark mb-3 w-100" %>
+            <div class="col-3 d-flex justify-content-end">
+              <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "btn btn-dark mb-3 w-100" %>
             </div>
           </div>
         </div>

@@ -1,13 +1,20 @@
-.show-card-product {
+.show-card-product, .show-title-card {
   overflow: hidden;
-  height: 150px;
   background: transparent;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
   justify-content: space-around;
   margin: 16px;
   color: white;
-  background-color: rgba(117, 140, 160,1);;
+  background-color: rgba(117, 140, 160,1);
+}
+
+.show-title-product {
+  height: 150px;
+}
+
+.show-title-card {
+  height: 120px;
 }
 
 .ingredient-card-product {
@@ -19,7 +26,7 @@
   justify-content: space-around;
   margin: 16px;
   color: white;
-  background-color: rgba(117, 140, 160,1);;
+  background-color: rgba(117, 140, 160,1);
 }
 
 
@@ -40,4 +47,23 @@
 .show-cocktail_card_link:hover {
   text-decoration: none;
   color: rgb(189,182,180);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.one {
+  grid-column: 1;
+  grid-row: 1;
+}
+.two {
+  grid-column: 2 ;
+  grid-row: 2;
+}
+.three {
+  grid-column: 3;
+  grid-row: 1 / 2;
 }
