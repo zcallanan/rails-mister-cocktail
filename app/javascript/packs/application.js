@@ -10,6 +10,11 @@ require("channels")
 import 'bootstrap';
 import { darkBanner } from 'components/banner';
 import { initSelect2 } from 'components/init_select2';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
+AOS.init();
 
 initSelect2();
 

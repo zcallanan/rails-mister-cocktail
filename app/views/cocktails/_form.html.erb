@@ -1,14 +1,16 @@
-<div class="row justify-content-center">
-  <div class="col-6">
-    <%= simple_form_for @cocktail do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :picture_url %>
-      <%= f.submit "Submit", class: "btn btn-info border" %>
-      <%= link_to "Cancel", root_path, class: "btn btn-warning ml-3 border" %>
-    <% end %>
-  </div>
-</div>
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :picture_url %>
+  <%= f.submit "Submit", class: "btn btn-info border" %>
+  <% if @cocktail = "null" %>
+    <%= link_to "Cancel", cocktails_path, class: "btn btn-warning ml-3 border" %>
+  <% else %>
+    <%= link_to "Cancel", cocktail_path(@cocktail), class: "btn btn-warning ml-3 border" %>
+  <% end %>
+
+<% end %>
+
 
 
 

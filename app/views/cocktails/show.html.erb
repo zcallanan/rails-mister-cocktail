@@ -5,10 +5,11 @@
       <div class="col-5">
       </div>
       <div class="col-7">
-        <div class="row show-title-card align-items-center ">
-          <div class="col-8">
-            <h2 class="mb-0 text-center"><strong><%= @cocktail.name %></strong></h2>
-          </div>
+        <div class="row show-title-card align-items-center justify-content-center">
+            <h2 class="mb-0 text-center"><strong><%= @cocktail.name %></strong>
+            <%= link_to edit_cocktail_path do %>
+             <i class="fas fa-edit icon"></i> </h2>
+            <% end %>
         </div>
       </div>
     </div>
@@ -17,12 +18,11 @@
       <div class="col-5">
       </div>
       <div class="col-7">
-        <div class="row show-card-product align-items-center justify-content-between">
-          <div class="col-8 ml-3">
-            <p class="mt-4 mb-4"><%= @cocktail.description %>.</p>
+        <div class="row show-card-product align-items-center justify-content-start">
+          <div class="col-10 ml-3">
+            <p class="mt-4 mb-4"><%= @cocktail.description %></p>
           </div>
-          <div class="col-3 d-flex text-nowrap justify-content-end">
-            <%= link_to "Edit Cocktail", edit_cocktail_path, class: "btn btn-secondary border w-100" %>
+          <div class="col-1 d-flex text-nowrap justify-content-end">
           </div>
         </div>
       </div>
@@ -33,8 +33,11 @@
       </div>
       <div class="col-7">
         <div class="ingredient-card-product">
-          <div class="row align-items-center justify-content-center">
-            <h2 class="mt-4"><strong>Doses</strong></h2>
+          <div class="row align-items-center justify-content-center mt-4">
+              <h4><strong>Doses</strong>
+              <%= link_to new_cocktail_dose_path(@cocktail) do %>
+                <i class="fas fa-plus icon"></i>
+              <% end %></h4>
           </div>
           <div class="row justify-content-between align-items-center">
             <div class="col-8">
@@ -46,16 +49,13 @@
                       <%= ingredient.name %> • <%= dose.description %> •
                       <%= link_to dose_path(dose), method: :delete, data: {
           confirm: 'Are you sure?'} do %>
-                        <i class="far fa-trash-alt text-info"></i>
+                        <i class="far fa-trash-alt text-info icon"></i>
                       <% end %>
                     </li>
                   <% end %>
                 <% end %>
               <% end %>
-            </ul>
-            </div>
-            <div class="col-3 d-flex text-nowrap justify-content-end">
-              <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "btn btn-secondary border mb-3 w-100" %>
+              </ul>
             </div>
           </div>
         </div>

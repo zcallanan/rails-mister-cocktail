@@ -37,7 +37,7 @@
 }
 
 .show-card-product p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -47,4 +47,12 @@
 .show-cocktail_card_link:hover {
   text-decoration: none;
   color: rgb(189,182,180);
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.icon:hover::before {
+    color: #958172;
 }

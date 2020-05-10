@@ -9,15 +9,23 @@
 require 'open-uri'
 require 'json'
 
-# Ingredient.destroy_all
+# DESTROY ALL EXISTING DATA
 
-# url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-# list = open(url).read
-# result = JSON.parse(list)
-# result["drinks"].each do |row|
-#   ingredient = Ingredient.new(name: row["strIngredient1"])
-#   ingredient.save
-# end
+Cocktail.destroy_all
+Dose.destroy_all
+Ingredient.destroy_all
+
+# BUILD INGREDIENTS
+
+url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+list = open(url).read
+result = JSON.parse(list)
+result["drinks"].each do |row|
+  ingredient = Ingredient.new(name: row['strIngredient1'])
+  ingredient.save
+end
+
+# GET ARRAY WITH ALCOHOL DRINK IDS
 
 url = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic'
 list = open(url).read
@@ -27,8 +35,7 @@ result['drinks'].each do |row|
   drink_ids << row['idDrink']
 end
 
-Cocktail.destroy_all
-Dose.destroy_all
+# BUILD COCKTAILS AND DOSES
 
 drink_ids.each do |id|
   url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=#{id}"
@@ -43,50 +50,12 @@ drink_ids.each do |id|
   ingredients = Ingredient.all
   ingredient_hash = {}
   ingredients.each do |ingredient|
-    if ingredient['name'] == drink_details['drinks'][0]['strIngredient1']
-      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure1']
-    end
-    if ingredient['name'] == drink_details['drinks'][0]['strIngredient2']
-      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure2']
-    end
-    if ingredient['name'] == drink_details['drinks'][0]['strIngredient3']
-      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure3']
-    end
-    if ingredient['name'] == drink_details['drinks'][0]['strIngredient4']
-      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure4']
-    end
-    if ingredient['name'] == drink_details['drinks'][0]['strIngredient5']
-      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure5']
-    end
-    if ingredient['name'] == drink_details['drinks'][0]['strIngredient6']
-      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure6']
-    end
-    if ingredient['name'] == drink_details['drinks'][0]['strIngredient7']
-      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure7']
-    end
-    if ingredient['name'] == drink_details['drinks'][0]['strIngredient8']
-      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure8']
-    end
-    if ingredient['name'] == drink_details['drinks'][0]['strIngredient9']
-      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure9']
-    end
-    if ingredient['name'] == drink_details['drinks'][0]['strIngredient10']
-      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure10']
-    end
-    if ingredient['name'] == drink_details['drinks'][0]['strIngredient11']
-      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure11']
-    end
-    if ingredient['name'] == drink_details['drinks'][0]['strIngredient12']
-      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure12']
-    end
-    if ingredient['name'] == drink_details['drinks'][0]['strIngredient13']
-      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure13']
-    end
-    if ingredient['name'] == drink_details['drinks'][0]['strIngredient14']
-      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure14']
-    end
-    if ingredient['name'] == drink_details['drinks'][0]['strIngredient15']
-      ingredient_hash[ingredient['id']] = drink_details['drinks'][0]['strMeasure15']
+    n = 0
+    15.times do
+      n += 1
+      if ingredient['name'] == drink_details['drinks'][0]["strIngredient#{n}"]
+        ingredient_hash[ingredient['id']] = drink_details['drinks'][0]["strMeasure#{n}"]
+      end
     end
   end
 
