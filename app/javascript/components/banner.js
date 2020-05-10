@@ -1,0 +1,5 @@
+const placeholder = () => {
+
+};
+
+export { placeholder }

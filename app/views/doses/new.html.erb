@@ -5,7 +5,8 @@
       <%= f.association :ingredient, label_method: :name, value_method: :id, include_blank: false, input_html: { class: 'select2' } %>
       <%= f.input :description %>
       <%= f.hidden_field :cocktail_id %>
-      <%= f.submit class: "btn btn-dark"%>
+      <%= f.submit "Submit", class: "btn btn-dark"%>
+      <%= link_to "Cancel", cocktail_path(@cocktail), class: "btn btn-warning ml-3 border" %>
     <% end %>
   </div>
 </div>
