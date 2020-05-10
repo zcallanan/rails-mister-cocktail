@@ -4,6 +4,7 @@
     <p class="quote"><em>“Alcohol may be man's worst enemy, but the bible says love your enemy." - Frank Sinatra</em></p>
     <div class="row ">
       <% @cocktails.each do |cocktail| %>
+
         <%= render :partial => "card", :object => cocktail %>
 
       <% end %>

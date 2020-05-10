@@ -8,13 +8,11 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 import 'bootstrap';
-// import { initSelect2 } from './components/init_select2';
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
+import { initSelect2 } from '../components/init_select2';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-// AOS.init();
-
-// initSelect2();
+initSelect2();
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

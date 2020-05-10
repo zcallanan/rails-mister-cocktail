@@ -6,18 +6,19 @@
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body class="basic">
 
-      <%= render 'shared/navbar' %>
+      <%= render 'shared/dark_navbar' %>
       <%= yield %>
-<!--       <script>
-        AOS.init();
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init({duration: 600});
       </script>
- -->
+
   </body>
 </html>

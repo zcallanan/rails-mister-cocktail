@@ -5,15 +5,15 @@
   z-index: 1000;
 }
 
-.navbar-lewagon-white {
-  background-color: white;
+.navbar-lewagon-dark {
+  background-color: #11162C;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-lewagon .navbar-collapse .navbar-lewagon-dark {
+  flex-grow:0 ;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-lewagon .navbar-brand .navbar-lewagon-dark img {
   width: 40px;
 }
 
