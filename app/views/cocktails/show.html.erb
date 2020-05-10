@@ -1,8 +1,8 @@
-<div class="cocktail-banner" style="background-image: url(<%= asset_path @cocktail.picture_url %>) ;">
-  <div class="container">
 
+  <div class="container">
+   <div class="cocktail-banner" style="background-image: url(<%= asset_path @cocktail.picture_url %>) ;">
     <div class="row justify-content-start mt-n5">
-      <div class="col-3">
+      <div class="col-5">
       </div>
       <div class="col-7">
         <div class="row show-title-card align-items-center ">
@@ -14,22 +14,22 @@
     </div>
 
     <div class="row justify-content-start">
-      <div class="col-3">
+      <div class="col-5">
       </div>
       <div class="col-7">
         <div class="row show-card-product align-items-center justify-content-between">
           <div class="col-8 ml-3">
             <p class="mt-4 mb-4"><%= @cocktail.description %>.</p>
           </div>
-          <div class="col-3 d-flex text-nowrap justify-content-end mr-3">
-            <%= link_to "Edit Cocktail", edit_cocktail_path, class: "btn btn-secondary" %>
+          <div class="col-3 d-flex text-nowrap justify-content-end">
+            <%= link_to "Edit Cocktail", edit_cocktail_path, class: "btn btn-secondary border w-100" %>
           </div>
         </div>
       </div>
     </div>
 
     <div class="row justify-content-start">
-      <div class="col-3">
+      <div class="col-5">
       </div>
       <div class="col-7">
         <div class="ingredient-card-product">
@@ -54,8 +54,8 @@
               <% end %>
             </ul>
             </div>
-            <div class="col-3 d-flex justify-content-end">
-              <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "btn btn-dark mb-3 w-100" %>
+            <div class="col-3 d-flex text-nowrap justify-content-end">
+              <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "btn btn-secondary border mb-3 w-100" %>
             </div>
           </div>
         </div>
