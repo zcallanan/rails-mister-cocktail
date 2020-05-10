@@ -8,7 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 import 'bootstrap';
-import { placeholder } from './components/banner.js';
+import { placeholder } from '../components/banner.js';
 // import { initSelect2 } from './components/init_select2';
 // import AOS from 'aos';
 // import 'aos/dist/aos.css';
